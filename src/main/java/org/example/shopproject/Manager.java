@@ -3,13 +3,15 @@ package org.example.shopproject;
 public class Manager {
 
     Accountant accountant = new Accountant();
+    ManageTeacher manageTeacher = new ManageTeacher();
 
     public void newWorkDay(Seller seller) {
 
         manage(seller);
 
         System.out.println("Улучшает показатели продаж!");
-        System.out.println("Проводит обучение персонала!");
+
+        manageTeacher.teach();
 
         accountant.isTransferred();
     }
