@@ -9,9 +9,9 @@ public class Manager {
 
         manage(seller);
 
-        System.out.println("Улучшает показатели продаж!");
-
         manageTeacher.teach();
+
+        seller.improveSales();
 
         accountant.isTransferred();
     }
