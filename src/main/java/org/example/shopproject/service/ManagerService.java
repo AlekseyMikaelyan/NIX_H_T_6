@@ -1,10 +1,11 @@
 package org.example.shopproject.service;
 
 import org.example.shopproject.data.ManageTeacher;
+import org.example.shopproject.service.impl.AccountantServiceImpl;
 
 public class ManagerService {
 
-    AccountantService accountantService = new AccountantService();
+    AccountantService accountantService = new AccountantServiceImpl();
     ManageTeacher manageTeacher = new ManageTeacher();
 
     public void newWorkDay(SellerService sellerService) {
