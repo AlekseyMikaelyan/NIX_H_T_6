@@ -2,24 +2,25 @@ package org.example.shopproject.service;
 
 import org.example.shopproject.data.ManageTeacher;
 import org.example.shopproject.service.impl.AccountantServiceImpl;
+import org.example.shopproject.service.impl.SellerServiceImpl;
 
 public class ManagerService {
 
     AccountantService accountantService = new AccountantServiceImpl();
     ManageTeacher manageTeacher = new ManageTeacher();
 
-    public void newWorkDay(SellerService sellerService) {
+    public void newWorkDay(SellerServiceImpl sellerServiceImpl) {
 
-        manage(sellerService);
+        manage(sellerServiceImpl);
 
         manageTeacher.teach();
 
-        sellerService.improveSales();
+        sellerServiceImpl.improveSales();
 
         accountantService.isTransferred();
     }
 
-    public void manage(SellerService sellerService) {
+    public void manage(SellerServiceImpl sellerServiceImpl) {
         System.out.println("Проводит собрание!");
         System.out.println("Отвечает на вопросы!");
         System.out.println("Просчитывает зарплату продавца!");

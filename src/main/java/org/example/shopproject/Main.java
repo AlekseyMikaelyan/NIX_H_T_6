@@ -1,11 +1,11 @@
 package org.example.shopproject;
 
 import org.example.shopproject.service.ManagerService;
-import org.example.shopproject.service.SellerService;
+import org.example.shopproject.service.impl.SellerServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
         ManagerService managerService = new ManagerService();
-        managerService.newWorkDay(new SellerService());
+        managerService.newWorkDay(new SellerServiceImpl());
     }
 }
