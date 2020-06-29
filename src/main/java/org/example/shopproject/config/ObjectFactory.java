@@ -1,10 +1,17 @@
 package org.example.shopproject.config;
 
+import org.example.shopproject.config.impl.JavaApplicationConfiguration;
+
+import java.lang.reflect.InvocationTargetException;
+
 public class ObjectFactory {
 
     private static ObjectFactory instance;
+    private ApplicationConfiguration config;
 
-    private ObjectFactory() { }
+    private ObjectFactory() {
+        config = new JavaApplicationConfiguration("org.example.shopproject");
+    }
 
     public static ObjectFactory getInstance() {
         if(instance == null) {
@@ -14,7 +21,17 @@ public class ObjectFactory {
     }
 
     public <T> T createObject(Class<T> type) {
-        return null;
+        Class<? extends T> implClass = type;
+        if(type.isInterface()) {
+            implClass = config.getCurrentImplementation(type);
+        }
+        T t = null;
+        try {
+            t = implClass.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            throw new RuntimeException("невозможно создать класс: " + e.getClass().getName());
+        }
+        return t;
     }
 }
 
