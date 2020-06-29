@@ -1,8 +1,12 @@
 package org.example.shopproject.config;
 
 import org.example.shopproject.config.impl.JavaApplicationConfiguration;
+import org.example.shopproject.service.AccountantService;
+import org.example.shopproject.service.impl.DirectorServiceImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ObjectFactory {
 
@@ -10,7 +14,7 @@ public class ObjectFactory {
     private ApplicationConfiguration config;
 
     private ObjectFactory() {
-        config = new JavaApplicationConfiguration("org.example.shopproject");
+        config = new JavaApplicationConfiguration("org.example.shopproject", new HashMap<>(Map.of(AccountantService.class, DirectorServiceImpl.class)));
     }
 
     public static ObjectFactory getInstance() {
