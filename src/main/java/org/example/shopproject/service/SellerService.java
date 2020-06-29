@@ -1,6 +1,8 @@
-package org.example.shopproject;
+package org.example.shopproject.service;
 
-public class Seller {
+import org.example.shopproject.exception.SellerException;
+
+public class SellerService {
     private boolean teachingQuality = true;
 
     public void improveSales() {

@@ -1,6 +1,8 @@
-package org.example.shopproject;
+package org.example.shopproject.service;
 
-public class Accountant {
+import org.example.shopproject.exception.AccountantException;
+
+public class AccountantService {
     private boolean salaryTransfer = true;
 
     public void isTransferred() {

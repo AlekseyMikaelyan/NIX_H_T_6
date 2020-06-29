@@ -1,8 +1,11 @@
 package org.example.shopproject;
 
+import org.example.shopproject.service.ManagerService;
+import org.example.shopproject.service.SellerService;
+
 public class Main {
     public static void main(String[] args) {
-        Manager manager = new Manager();
-        manager.newWorkDay(new Seller());
+        ManagerService managerService = new ManagerService();
+        managerService.newWorkDay(new SellerService());
     }
 }

@@ -1,4 +1,4 @@
-package org.example.shopproject;
+package org.example.shopproject.exception;
 
 public class SellerException extends RuntimeException {
     public SellerException(String msg) {
