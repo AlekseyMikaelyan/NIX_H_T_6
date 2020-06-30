@@ -5,7 +5,7 @@ import org.example.shopproject.service.WorkEnvironmentService;
 
 public class WorkEnvironmentServiceImpl implements WorkEnvironmentService {
 
-    @Value
+    @Value("214")
     private String lectureHall;
 
     @Override
