@@ -3,6 +3,7 @@ package org.example.shopproject.config;
 import org.example.shopproject.config.impl.JavaApplicationConfiguration;
 import org.example.shopproject.service.AccountantService;
 import org.example.shopproject.service.impl.DirectorServiceImpl;
+import org.example.shopproject.util.ResourceUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -36,6 +37,10 @@ public class ObjectFactory {
             throw new RuntimeException("невозможно создать класс: " + e.getClass().getName());
         }
         return t;
+    }
+
+    private <T> void initFields(Class <T> type, T t) {
+        Map<String, String> map = ResourceUtil.getResource("application.properties");
     }
 }
 
